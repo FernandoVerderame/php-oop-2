@@ -67,7 +67,7 @@ $products = [$croccantini_1, $croccantini_2, $scatoletta, $mangime, $gabbia, $fi
                             </div>
                             <div class="card-body">
                                 <h5 class="card-title mb-2"><?= $product->title ?></h5>
-                                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                <p class="card-text"><?= $product->info ?></p>
                                 <div class="brand"><?= $product->brand ?></div>
                                 <div class="price">
                                     <i class="fa-solid fa-euro-sign"></i>
