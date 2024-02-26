@@ -13,8 +13,6 @@ $uccelli = 'Uccelli';
 $pesci = 'Pesci';
 
 // Products category
-
-
 $dog = new Category($cane);
 $cat = new Category($gatto);
 $birds = new Category($uccelli);
@@ -39,22 +37,49 @@ $products = [$croccantini_1, $croccantini_2, $scatoletta, $mangime, $gabbia, $fi
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OOP Shop</title>
-    
-    <!-- Bootstrap 5 --> 
+
+    <!-- Bootstrap 5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
     <!-- Font Awesome -->
-    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css' integrity='sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==' crossorigin='anonymous'/>
-    
-    <!-- Stylesheet --> 
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css' integrity='sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==' crossorigin='anonymous' />
+
+    <!-- Stylesheet -->
     <link rel='stylesheet' href='css/style.css'>
-    
+
 </head>
+
 <body>
-    
+    <section id="products" class="mt-4">
+        <div class="container">
+            <div class="row row-gap-4">
+                <?php foreach ($products as $product) : ?>
+                    <div class="col-3">
+                        <div class="card">
+                            <i class="<?= $product->icon ?> d-flex justify-content-center my-2"></i>
+                            <div class="card-image">
+                                <img src="<?= $product->image ?>" class="card-img-top" alt="<?= $product->title ?>">
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title mb-2"><?= $product->title ?></h5>
+                                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                <div class="brand"><?= $product->brand ?></div>
+                                <div class="price">
+                                    <i class="fa-solid fa-euro-sign"></i>
+                                    <?= $product->price ?>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+        </div>
+    </section>
 </body>
+
 </html>
